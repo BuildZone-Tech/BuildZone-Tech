@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BuildZone | Home</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
+  <title>BuildZone | Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
   <style>
     /* Reset e variáveis do projeto */
     * {
@@ -12,16 +12,14 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
     :root {
       --primary: #007BFF;
       --secondary: #6A0DAD;
       --background: #1C1C1C;
       --background2: #2E2E2E;
       --text-color: #EAEAEA;
-      --accent: #00FF00;
+      --neon: #00FF00;
     }
-    
     body {
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, var(--background), var(--background2));
@@ -29,162 +27,163 @@
       line-height: 1.6;
       min-height: 100vh;
     }
-    
-    /* Cabeçalho */
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-bottom: 2px solid var(--primary);
-      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    a {
+      text-decoration: none;
+      color: inherit;
     }
     
+    /* Header */
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 2px solid var(--primary);
+      box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+    }
     header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
+      font-size: 3.2rem;
+      letter-spacing: 3px;
       color: var(--primary);
       text-shadow: 2px 2px 8px var(--secondary);
       margin-bottom: 0.5rem;
     }
-    
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       text-shadow: 1px 1px 4px var(--secondary);
     }
     
-    /* Navegação */
+    /* Navigation */
     nav {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
-    
     nav ul {
-      display: flex;
       list-style: none;
+      display: flex;
       justify-content: center;
       gap: 2rem;
     }
-    
     nav ul li a {
-      color: var(--text-color);
-      text-decoration: none;
       font-size: 1.1rem;
       transition: color 0.3s, text-shadow 0.3s;
     }
-    
     nav ul li a:hover {
       color: var(--primary);
       text-shadow: 0 0 10px var(--primary);
     }
     
-    /* Conteúdo Principal */
-    main {
-      padding: 2rem;
+    /* Container principal com duas colunas */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
       max-width: 1200px;
-      margin: auto;
+      margin: 2rem auto;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .blog-main {
+      flex: 3;
+    }
+    .sidebar {
+      flex: 1;
     }
     
-    .intro {
-      text-align: center;
-      padding: 3rem 0;
-      animation: fadeIn 1.5s ease-in-out;
+    /* Estilização dos cards de post */
+    .post {
+      background: rgba(0, 0, 0, 0.7);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    
-    .intro h2 {
-      font-size: 2.8rem;
+    .post:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px var(--primary);
+    }
+    .post h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
       color: var(--primary);
     }
-    
-    .intro p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+    .post p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
-    
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    
-    .buttons a {
-      padding: 1rem 2rem;
-      border-radius: 50px;
+    .post a.read-more {
+      display: inline-block;
       background: linear-gradient(45deg, var(--primary), var(--secondary));
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
       color: #fff;
-      text-decoration: none;
-      font-size: 1.2rem;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6);
     }
-    
-    .buttons a:hover {
+    .post a.read-more:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px var(--primary);
     }
     
-    /* Sessões de Conteúdo */
-    section.features {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 2rem;
+    /* Sidebar e Widgets */
+    .widget {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 2px dashed var(--neon);
+      box-shadow: 0 0 15px var(--neon);
     }
-    
-    section.features h2 {
-      font-size: 2.4rem;
+    .widget h3 {
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: var(--primary);
+      color: var(--neon);
+    }
+    .widget p {
+      font-size: 1rem;
+    }
+    /* Seção "Você sabia?" */
+    .did-you-know {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.8);
+    }
+    .did-you-know h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
     }
     
-    section.features p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 1.5rem;
-    }
-    
-    /* Rodapé */
+    /* Footer */
     footer {
+      background: rgba(0, 0, 0, 0.7);
       text-align: center;
       padding: 1rem;
-      background: rgba(0, 0, 0, 0.7);
       border-top: 2px solid var(--primary);
       margin-top: 2rem;
     }
-    
     footer p {
       font-size: 1rem;
     }
     
-    /* Animações */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    .dynamic-text {
-      display: inline-block;
-      animation: neonBlink 1.5s infinite alternate;
-    }
-    
+    /* Efeitos neon e animações */
     @keyframes neonBlink {
-      from { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
-      to { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
+      0% { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
+      100% { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
+    }
+    .neon-text {
+      animation: neonBlink 1.5s infinite alternate;
     }
     
     /* Responsividade */
     @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
       header h1 {
         font-size: 2.5rem;
-      }
-      .intro h2 {
-        font-size: 2rem;
       }
       nav ul {
         flex-direction: column;
@@ -193,13 +192,13 @@
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
+  <!-- Header -->
   <header>
-    <h1>BuildZone</h1>
+    <h1 class="neon-text">BuildZone</h1>
     <p>Sua Zona de Inovação para Montagem e Análise de PCs</p>
   </header>
   
-  <!-- Navegação -->
+  <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -209,54 +208,68 @@
     </ul>
   </nav>
   
-  <!-- Conteúdo Principal -->
-  <main>
-    <section class="intro">
-      <h2>Bem-vindo à <span class="dynamic-text">BuildZone</span></h2>
-      <p>
-        Descubra o universo da montagem de PCs com análises profundas, comparativos inteligentes e recomendações personalizadas.
-        Seja você um entusiasta da tecnologia ou um profissional em busca de performance, nossa plataforma dinâmica foi feita para transformar sua experiência no mundo dos computadores.
-      </p>
-      <div class="buttons">
-        <a href="trabalho.html">Explore PC para Trabalho</a>
-        <a href="gamer.html">Explore PC Gamer</a>
+  <!-- Container principal -->
+  <div class="container">
+    <!-- Seção principal do blog (Posts) -->
+    <div class="blog-main">
+      <!-- Post 1 -->
+      <article class="post">
+        <h2>Inovações tecnológicas que transformam o mundo dos PCs</h2>
+        <p>
+          Descubra como as novas tendências em tecnologia estão revolucionando a forma como montamos e otimizamos nossos computadores. 
+          Processadores de última geração, sistemas inteligentes e interfaces futuristas já são realidade e prometem transformar sua experiência.
+        </p>
+        <a class="read-more" href="#">Leia Mais</a>
+      </article>
+      
+      <!-- Post 2 -->
+      <article class="post">
+        <h2>A evolução dos componentes: do analógico ao digital</h2>
+        <p>
+          Você sabia que as primeiras placas-mãe eram muito diferentes das atuais? A evolução dos componentes possibilitou a criação de máquinas mais compactas e poderosas, tornando o impossível em realidade.
+        </p>
+        <a class="read-more" href="#">Leia Mais</a>
+      </article>
+      
+      <!-- Post 3 -->
+      <article class="post">
+        <h2>Tendências Futuristas: O que vem por aí no mercado de PCs</h2>
+        <p>
+          Com a chegada de novas tecnologias, como inteligência artificial e computação quântica, o mercado de computadores está passando por uma revolução. 
+          Saiba como essas inovações podem impactar o desempenho e a eficiência dos sistemas.
+        </p>
+        <a class="read-more" href="#">Leia Mais</a>
+      </article>
+    </div>
+    
+    <!-- Sidebar com Widgets -->
+    <aside class="sidebar">
+      <!-- Widget: Você Sabia? -->
+      <div class="widget">
+        <h3>Você sabia?</h3>
+        <div class="did-you-know">
+          <h4>O primeiro computador pesava mais de 30 toneladas!</h4>
+          <p>
+            Verdade! Os pioneiros da computação precisavam de espaços enormes para acomodar seus equipamentos, contrastando com os PCs compactos e potentes de hoje.
+          </p>
+        </div>
       </div>
-    </section>
-    
-    <section class="features">
-      <h2>Recursos Exclusivos</h2>
-      <p>
-        No BuildZone, você encontra ferramentas interativas para verificar a compatibilidade, comparativos detalhados e simulações de desempenho real.
-      </p>
-      <p>
-        Análises de especialistas e dados precisos garantem que cada componente seja cuidadosamente avaliado para que você possa montar o PC ideal com confiança.
-      </p>
-    </section>
-    
-    <section class="features">
-      <h2>Por que escolher o BuildZone?</h2>
-      <p>
-        <strong>Inovação:</strong> Acompanhamos as últimas tendências e tecnologias.
-        <br>
-        <strong>Confiabilidade:</strong> Informações e análises que você pode confiar.
-        <br>
-        <strong>Experiência:</strong> Uma interface dinâmica, intuitiva e com design futurista para facilitar a montagem do seu PC.
-      </p>
-    </section>
-  </main>
+      
+      <!-- Widget: Dica Tech -->
+      <div class="widget">
+        <h3>Dica Tech</h3>
+        <p>
+          Mantenha sempre seu sistema atualizado e faça uma manutenção regular. Atualizar drivers e limpar arquivos desnecessários garante um desempenho otimizado.
+        </p>
+      </div>
+    </aside>
+  </div>
   
-  <!-- Rodapé -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2023 BuildZone. Todos os direitos reservados.</p>
   </footer>
   
-  <script>
-    // Atualiza automaticamente o ano no rodapé
-    (function() {
-      const footer = document.querySelector("footer p");
-      const currentYear = new Date().getFullYear();
-      footer.innerHTML = `&copy; ${currentYear} BuildZone. Todos os direitos reservados.`;
-    })();
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
