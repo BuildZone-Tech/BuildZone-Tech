@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BuildZone | PC Gamer</title>
-  <!-- Fonte Futurista -->
+  <title>BuildZone | Home</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:400,700">
-  <!-- Incluindo Chart.js via CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     /* Reset e variáveis globais */
     * {
@@ -88,11 +85,11 @@
       max-width: 1200px;
       margin: 3rem auto;
       padding: 0 1rem;
+      text-align: center;
     }
     
     .intro {
-      text-align: center;
-      padding: 2rem 0;
+      padding: 3rem;
       animation: fadeIn 1.5s ease-in-out;
     }
     
@@ -111,67 +108,68 @@
       margin-right: auto;
     }
     
-    /* Formulário de Compatibilidade */
-    .compatibility-form {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 800px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 123, 255, 0.8);
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
     
-    .compatibility-form .form-group {
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-    
-    .compatibility-form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-      color: var(--primary);
-      text-shadow: 0 0 10px var(--secondary);
-    }
-    
-    .compatibility-form select {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: 1px solid var(--secondary);
-      font-size: 1rem;
-      background: var(--background2);
-      color: var(--text-color);
-    }
-    
-    .compatibility-form button {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      border: none;
+    .buttons a {
+      display: inline-block;
+      padding: 1.2rem 2.5rem;
       border-radius: 50px;
       background: linear-gradient(45deg, var(--primary), var(--secondary));
       color: #fff;
       font-size: 1.3rem;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       box-shadow: 0 5px 15px rgba(0, 123, 255, 0.7);
     }
     
-    .compatibility-form button:hover {
-      transform: scale(1.05);
+    .buttons a:hover {
+      transform: scale(1.1);
       box-shadow: 0 0 25px var(--primary);
     }
     
-    /* Gráfico de Compatibilidade */
-    .chart-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.7);
+    /* Seção "Você Sabia?" com efeitos neon */
+    .did-you-know {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 2rem;
       border-radius: 10px;
+      margin-top: 3rem;
+      color: #fff;
       box-shadow: 0 5px 20px rgba(0, 123, 255, 0.8);
       animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    .did-you-know h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--neon);
+      text-shadow: 0 0 12px var(--neon);
+    }
+    
+    .did-you-know p {
+      font-size: 1.3rem;
+    }
+    
+    /* Seção de recursos */
+    section.features {
+      margin-top: 4rem;
+      padding: 2rem;
+    }
+    
+    section.features h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      text-shadow: 0 0 15px var(--secondary);
+    }
+    
+    section.features p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
     }
     
     /* Rodapé */
@@ -181,7 +179,7 @@
       padding: 1.5rem;
       border-top: 3px solid var(--primary);
       margin-top: 3rem;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.7);
     }
     
     footer p {
@@ -204,11 +202,9 @@
       header h1 {
         font-size: 3rem;
       }
-      
       .intro h2 {
         font-size: 2.5rem;
       }
-      
       nav ul {
         flex-direction: column;
         gap: 1rem;
@@ -236,118 +232,47 @@
   <!-- Conteúdo Principal -->
   <main>
     <section class="intro">
-      <h2>Monte seu PC Gamer</h2>
+      <h2>Construindo o Futuro dos PCs</h2>
       <p>
-        Selecione os componentes abaixo para verificar a compatibilidade da sua configuração gamer.
+        No BuildZone, você explora as melhores combinações de hardware com análises profundas, 
+        comparativos inteligentes e recomendações personalizadas para elevar sua experiência tecnológica.
+      </p>
+      <div class="buttons">
+        <a href="trabalho.html">PC para Trabalho</a>
+        <a href="pcgamer.html">PC Gamer</a>
+      </div>
+    </section>
+    
+    <!-- Seção "Você Sabia?" -->
+    <section class="did-you-know">
+      <h3>Você sabia?</h3>
+      <p>
+        O primeiro SSD lançado tinha apenas 20MB de espaço! Hoje, encontramos SSDs que ultrapassam os 8TB, revolucionando o desempenho.
       </p>
     </section>
     
-    <!-- Formulário de Seleção dos Componentes -->
-    <section class="compatibility-form">
-      <form id="compatibilityForm">
-        <!-- 1. Processadores (CPU) -->
-        <div class="form-group">
-          <label for="cpu">Processador (CPU):</label>
-          <select id="cpu" name="cpu">
-            <option value="">Selecione um processador</option>
-            <option value="AMD Ryzen 5 5600X">AMD Ryzen 5 5600X</option>
-            <option value="Intel Core i5-12400F">Intel Core i5-12400F</option>
-            <option value="AMD Ryzen 7 5800X3D">AMD Ryzen 7 5800X3D</option>
-            <option value="Intel Core i7-13700K">Intel Core i7-13700K</option>
-            <option value="Intel Core i3-12100">Intel Core i3-12100</option>
-          </select>
-        </div>
-        
-        <!-- 2. Placas-mãe (Motherboard) -->
-        <div class="form-group">
-          <label for="motherboard">Placa-mãe (Motherboard):</label>
-          <select id="motherboard" name="motherboard">
-            <option value="">Selecione uma placa-mãe</option>
-            <option value="ASUS TUF Gaming B550M-Plus">ASUS TUF Gaming B550M-Plus</option>
-            <option value="MSI MAG B660M Mortar WiFi DDR4">MSI MAG B660M Mortar WiFi DDR4</option>
-            <option value="Gigabyte B450M DS3H">Gigabyte B450M DS3H</option>
-            <option value="ASRock B550 Phantom Gaming 4">ASRock B550 Phantom Gaming 4</option>
-            <option value="ASUS PRIME H610M-E D4">ASUS PRIME H610M-E D4</option>
-          </select>
-        </div>
-        
-        <!-- 3. Placas de vídeo (GPU) -->
-        <div class="form-group">
-          <label for="gpu">Placa de vídeo (GPU):</label>
-          <select id="gpu" name="gpu">
-            <option value="">Selecione uma placa de vídeo</option>
-            <option value="NVIDIA GeForce RTX 3060">NVIDIA GeForce RTX 3060</option>
-            <option value="AMD Radeon RX 6600 XT">AMD Radeon RX 6600 XT</option>
-            <option value="NVIDIA GeForce RTX 4060 Ti">NVIDIA GeForce RTX 4060 Ti</option>
-            <option value="AMD Radeon RX 7800 XT">AMD Radeon RX 7800 XT</option>
-            <option value="NVIDIA GeForce GTX 1660 Super">NVIDIA GeForce GTX 1660 Super</option>
-          </select>
-        </div>
-        
-        <!-- 4. Memória RAM -->
-        <div class="form-group">
-          <label for="ram">Memória RAM:</label>
-          <select id="ram" name="ram">
-            <option value="">Selecione uma memória RAM</option>
-            <option value="Corsair Vengeance LPX 16GB (2x8GB) 3200MHz">Corsair Vengeance LPX 16GB (2x8GB) 3200MHz</option>
-            <option value="Kingston Fury Beast 16GB (2x8GB) 3600MHz">Kingston Fury Beast 16GB (2x8GB) 3600MHz</option>
-            <option value="Crucial Ballistix 16GB 3200MHz">Crucial Ballistix 16GB 3200MHz</option>
-            <option value="XPG Spectrix D41 16GB 3600MHz">XPG Spectrix D41 16GB 3600MHz</option>
-            <option value="G.Skill Ripjaws V 16GB 3200MHz">G.Skill Ripjaws V 16GB 3200MHz</option>
-          </select>
-        </div>
-        
-        <!-- 5. Armazenamento (SSD/HDD) -->
-        <div class="form-group">
-          <label for="storage">Armazenamento (SSD/HDD):</label>
-          <select id="storage" name="storage">
-            <option value="">Selecione um armazenamento</option>
-            <option value="Kingston A2000 500GB NVMe">Kingston A2000 500GB NVMe</option>
-            <option value="Samsung 980 1TB NVMe">Samsung 980 1TB NVMe</option>
-            <option value="Crucial MX500 1TB SATA">Crucial MX500 1TB SATA</option>
-            <option value="Western Digital Blue 1TB HDD">Western Digital Blue 1TB HDD</option>
-            <option value="Seagate Barracuda 2TB HDD">Seagate Barracuda 2TB HDD</option>
-          </select>
-        </div>
-        
-        <!-- 6. Fonte de alimentação (PSU) -->
-        <div class="form-group">
-          <label for="psu">Fonte de alimentação (PSU):</label>
-          <select id="psu" name="psu">
-            <option value="">Selecione uma fonte de alimentação</option>
-            <option value="Corsair CV550 550W 80 Plus Bronze">Corsair CV550 550W 80 Plus Bronze</option>
-            <option value="Cooler Master MWE 650W 80 Plus Bronze">Cooler Master MWE 650W 80 Plus Bronze</option>
-            <option value="EVGA 600 BR 80 Plus Bronze">EVGA 600 BR 80 Plus Bronze</option>
-            <option value="XPG Pylon 650W 80 Plus Bronze">XPG Pylon 650W 80 Plus Bronze</option>
-            <option value="Thermaltake Smart 500W 80 Plus">Thermaltake Smart 500W 80 Plus</option>
-          </select>
-        </div>
-        
-        <!-- 7. Gabinete -->
-        <div class="form-group">
-          <label for="case">Gabinete:</label>
-          <select id="case" name="case">
-            <option value="">Selecione um gabinete</option>
-            <option value="Cooler Master MasterBox Q300L">Cooler Master MasterBox Q300L</option>
-            <option value="NZXT H510">NZXT H510</option>
-            <option value="Aerocool Bolt Mini">Aerocool Bolt Mini</option>
-            <option value="Corsair 4000D Airflow">Corsair 4000D Airflow</option>
-            <option value="Redragon GC-605">Redragon GC-605</option>
-          </select>
-        </div>
-        
-        <!-- Botão para Verificar Compatibilidade -->
-        <div class="form-group">
-          <button type="button" onclick="checkCompatibility()">Verificar Compatibilidade</button>
-        </div>
-      </form>
+    <!-- Seção de Recursos -->
+    <section class="features">
+      <h2>Recursos Exclusivos</h2>
+      <p>
+        Descubra ferramentas interativas para verificar a compatibilidade, comparativos detalhados e simulações de desempenho reais.
+      </p>
+      <p>
+        Análises de especialistas e dados precisos garantem que cada componente seja avaliado cuidadosamente para que você encontre a combinação ideal com total confiança.
+      </p>
     </section>
     
-    <!-- Área do Gráfico -->
-    <section class="chart-container">
-      <canvas id="compatibilityChart"></canvas>
+    <!-- Seção: Por que escolher o BuildZone -->
+    <section class="features">
+      <h2>Por que escolher o BuildZone?</h2>
+      <p>
+        <strong>Inovação:</strong> Estamos sempre atualizados com as últimas tendências tecnológicas.
+        <br>
+        <strong>Confiabilidade:</strong> Informações e análises de qualidade para decisões seguras.
+        <br>
+        <strong>Experiência:</strong> Uma interface dinâmica e futurista que facilita a montagem do seu PC.
+      </p>
     </section>
-    
   </main>
   
   <!-- Rodapé -->
@@ -355,91 +280,6 @@
     <p>&copy; 2025 BuildZone. Todos os direitos reservados.</p>
   </footer>
   
-  <script>
-    // Variável global para o gráfico
-    let compatibilityChart;
-    
-    // Função para utilizar Chart.js e atualizar o gráfico com dados simulados
-    function updateChart(performance, speed, temperature) {
-      const ctx = document.getElementById('compatibilityChart').getContext('2d');
-      
-      // Se o gráfico ainda não foi criado, crie-o
-      if (!compatibilityChart) {
-        compatibilityChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Desempenho', 'Velocidade', 'Temperatura'],
-            datasets: [{
-              label: 'Métricas',
-              data: [performance, speed, temperature],
-              backgroundColor: [
-                'rgba(0, 123, 255, 0.7)',   // Desempenho
-                'rgba(106, 13, 173, 0.7)',   // Velocidade
-                'rgba(255, 99, 132, 0.7)'    // Temperatura
-              ],
-              borderColor: [
-                'rgba(0, 123, 255, 1)',
-                'rgba(106, 13, 173, 1)',
-                'rgba(255, 99, 132, 1)'
-              ],
-              borderWidth: 2
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 100
-              }
-            },
-            plugins: {
-              legend: {
-                labels: {
-                  color: '#EAEAEA'
-                }
-              }
-            }
-          }
-        });
-      } else {
-        // Atualiza os dados do gráfico
-        compatibilityChart.data.datasets[0].data = [performance, speed, temperature];
-        compatibilityChart.update();
-      }
-    }
-    
-    // Função que simula a verificação da compatibilidade e gera dados para o gráfico
-    function checkCompatibility() {
-      // Coleta dos valores selecionados
-      const cpu = document.getElementById('cpu').value;
-      const motherboard = document.getElementById('motherboard').value;
-      const gpu = document.getElementById('gpu').value;
-      const ram = document.getElementById('ram').value;
-      const storage = document.getElementById('storage').value;
-      const psu = document.getElementById('psu').value;
-      const pcCase = document.getElementById('case').value;
-      
-      // Aqui você pode implementar suas regras de compatibilidade. Para demonstração, vamos simular valores:
-      // Valores simulados:
-      const performance = Math.floor(Math.random() * 31) + 70;  // 70 a 100
-      const speed       = Math.floor(Math.random() * 31) + 70;  // 70 a 100
-      const temperature = Math.floor(Math.random() * 41) + 30;  // 30 a 70
-      
-      // Atualiza o gráfico
-      updateChart(performance, speed, temperature);
-      
-      // (Opcional) Exibe um alerta com os dados selecionados
-      alert(
-        "Componentes selecionados:\n" +
-        "CPU: " + (cpu || "Não selecionado") + "\n" +
-        "Placa-mãe: " + (motherboard || "Não selecionado") + "\n" +
-        "GPU: " + (gpu || "Não selecionado") + "\n" +
-        "RAM: " + (ram || "Não selecionado") + "\n" +
-        "Armazenamento: " + (storage || "Não selecionado") + "\n" +
-        "Fonte: " + (psu || "Não selecionado") + "\n" +
-        "Gabinete: " + (pcCase || "Não selecionado")
-      );
-    }
-  </script>
+  <script src="js/script.js"></script>
 </body>
-  </html>
+</html>
