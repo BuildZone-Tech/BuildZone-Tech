@@ -1,215 +1,141 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuildZone | PC Gamer</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:400,700">
   <style>
-    /* Reset e variáveis globais */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-    
-    :root {
-      --primary: #007BFF;
-      --secondary: #6A0DAD;
-      --neon: #00FF00;
-      --background: #0B0B0B;
-      --background2: #1F1F1F;
-      --text-color: #EAEAEA;
-    }
-    
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, var(--background), var(--background2));
-      color: var(--text-color);
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    
-    /* Cabeçalho */
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: rgba(0, 0, 0, 0.7);
-      border-bottom: 3px solid var(--primary);
-      box-shadow: 0 0 20px var(--primary);
-    }
-    
-    header h1 {
-      font-size: 4rem;
-      letter-spacing: 3px;
-      color: var(--primary);
-      text-shadow: 0 0 15px var(--secondary);
-      animation: neonPulse 1.5s alternate infinite;
-    }
-    
-    header p {
-      font-size: 1.5rem;
-      margin-top: 0.5rem;
-      text-shadow: 0 0 8px var(--secondary);
-    }
-    
-    /* Navegação */
-    nav {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-    }
-    
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-    
-    nav ul li a {
-      font-size: 1.2rem;
-      color: var(--text-color);
-      text-decoration: none;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-    
-    nav ul li a:hover {
-      color: var(--primary);
-      text-shadow: 0 0 10px var(--primary);
-    }
-    
-    /* Conteúdo Principal */
-    main {
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-    
-    .intro {
-      text-align: center;
-      padding: 2rem 0;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    
-    .intro h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-      text-shadow: 0 0 15px var(--secondary);
-    }
-    
-    .intro p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    /* Formulário de Compatibilidade */
-    .compatibility-form {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 800px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 123, 255, 0.8);
-    }
-    
-    .compatibility-form .form-group {
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-    
-    .compatibility-form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-      color: var(--primary);
-      text-shadow: 0 0 10px var(--secondary);
-    }
-    
-    .compatibility-form select {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: 1px solid var(--secondary);
-      font-size: 1rem;
-      background: var(--background2);
-      color: var(--text-color);
-    }
-    
-    .compatibility-form button {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      border: none;
-      border-radius: 50px;
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      color: #fff;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.7);
-    }
-    
-    .compatibility-form button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px var(--primary);
-    }
-    
-    /* Rodapé */
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      padding: 1.5rem;
-      border-top: 3px solid var(--primary);
-      margin-top: 3rem;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
-    }
-    
-    footer p {
-      font-size: 1rem;
-    }
-    
-    /* Animações */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes neonPulse {
-      from { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); }
-      to { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
-    }
-    
-    /* Responsividade */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 3rem;
-      }
-      
-      .intro h2 {
-        font-size: 2.5rem;
-      }
-      
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
+    }:root {
+  --primary: #007BFF;
+  --secondary: #6A0DAD;
+  --neon: #00FF00;
+  --background: #0B0B0B;
+  --background2: #1F1F1F;
+  --text-color: #EAEAEA;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, var(--background), var(--background2));
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 3px solid var(--primary);
+  box-shadow: 0 0 20px var(--primary);
+}
+
+header h1 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-shadow: 0 0 15px var(--secondary);
+  animation: neonPulse 1.5s alternate infinite;
+}
+
+header p {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 8px var(--secondary);
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav ul li a {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+}
+
+main {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.compatibility-form {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 123, 255, 0.8);
+}
+
+.compatibility-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.compatibility-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.compatibility-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  background: var(--background2);
+  color: var(--text-color);
+  border: 1px solid var(--secondary);
+}
+
+.compatibility-form button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.7);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 3px solid var(--primary);
+}
+
+@keyframes neonPulse {
+  from { text-shadow: 0 0 10px var(--primary); }
+  to { text-shadow: 0 0 20px var(--secondary); }
+}
+
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header>
     <h1>BuildZone</h1>
-    <p>Sua Zona de Inovação para Montagem e Análise de PCs</p>
+    <p>Monte seu PC Gamer com segurança</p>
   </header>
-  
-  <!-- Navegação -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -218,145 +144,100 @@
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
-  
-  <!-- Conteúdo Principal -->
   <main>
-    <section class="intro">
-      <h2>Monte seu PC Gamer</h2>
-      <p>
-        Selecione os componentes abaixo para verificar a compatibilidade da sua configuração gamer.
-      </p>
-    </section>
-    
     <section class="compatibility-form">
       <form id="compatibilityForm">
-        <!-- 1. Processadores (CPU) -->
         <div class="form-group">
           <label for="cpu">Processador (CPU):</label>
-          <select id="cpu" name="cpu">
-            <option value="">Selecione um processador</option>
+          <select id="cpu">
+            <option value="">Selecione</option>
             <option value="AMD Ryzen 5 5600X">AMD Ryzen 5 5600X</option>
             <option value="Intel Core i5-12400F">Intel Core i5-12400F</option>
-            <option value="AMD Ryzen 7 5800X3D">AMD Ryzen 7 5800X3D</option>
-            <option value="Intel Core i7-13700K">Intel Core i7-13700K</option>
-            <option value="Intel Core i3-12100">Intel Core i3-12100</option>
           </select>
         </div>
-        
-        <!-- 2. Placas-mãe (Motherboard) -->
         <div class="form-group">
-          <label for="motherboard">Placa-mãe (Motherboard):</label>
-          <select id="motherboard" name="motherboard">
-            <option value="">Selecione uma placa-mãe</option>
+          <label for="motherboard">Placa-mãe:</label>
+          <select id="motherboard">
+            <option value="">Selecione</option>
             <option value="ASUS TUF Gaming B550M-Plus">ASUS TUF Gaming B550M-Plus</option>
-            <option value="MSI MAG B660M Mortar WiFi DDR4">MSI MAG B660M Mortar WiFi DDR4</option>
-            <option value="Gigabyte B450M DS3H">Gigabyte B450M DS3H</option>
-            <option value="ASRock B550 Phantom Gaming 4">ASRock B550 Phantom Gaming 4</option>
-            <option value="ASUS PRIME H610M-E D4">ASUS PRIME H610M-E D4</option>
+            <option value="MSI MAG B660M Mortar WiFi DDR4">MSI MAG B660M Mortar</option>
           </select>
         </div>
-        
-        <!-- 3. Placas de vídeo (GPU) -->
         <div class="form-group">
           <label for="gpu">Placa de vídeo (GPU):</label>
-          <select id="gpu" name="gpu">
-            <option value="">Selecione uma placa de vídeo</option>
-            <option value="NVIDIA GeForce RTX 3060">NVIDIA GeForce RTX 3060</option>
-            <option value="AMD Radeon RX 6600 XT">AMD Radeon RX 6600 XT</option>
-            <option value="NVIDIA GeForce RTX 4060 Ti">NVIDIA GeForce RTX 4060 Ti</option>
-            <option value="AMD Radeon RX 7800 XT">AMD Radeon RX 7800 XT</option>
-            <option value="NVIDIA GeForce GTX 1660 Super">NVIDIA GeForce GTX 1660 Super</option>
+          <select id="gpu">
+            <option value="">Selecione</option>
+            <option value="RTX 3060">RTX 3060</option>
+            <option value="RX 6600 XT">RX 6600 XT</option>
           </select>
         </div>
-        
-        <!-- 4. Memória RAM -->
         <div class="form-group">
           <label for="ram">Memória RAM:</label>
-          <select id="ram" name="ram">
-            <option value="">Selecione uma memória RAM</option>
-            <option value="Corsair Vengeance LPX 16GB (2x8GB) 3200MHz">Corsair Vengeance LPX 16GB (2x8GB) 3200MHz</option>
-            <option value="Kingston Fury Beast 16GB (2x8GB) 3600MHz">Kingston Fury Beast 16GB (2x8GB) 3600MHz</option>
-            <option value="Crucial Ballistix 16GB 3200MHz">Crucial Ballistix 16GB 3200MHz</option>
-            <option value="XPG Spectrix D41 16GB 3600MHz">XPG Spectrix D41 16GB 3600MHz</option>
-            <option value="G.Skill Ripjaws V 16GB 3200MHz">G.Skill Ripjaws V 16GB 3200MHz</option>
+          <select id="ram">
+            <option value="">Selecione</option>
+            <option value="16GB 3200MHz">16GB 3200MHz</option>
+            <option value="16GB 3600MHz">16GB 3600MHz</option>
           </select>
         </div>
-        
-        <!-- 5. Armazenamento (SSD/HDD) -->
         <div class="form-group">
-          <label for="storage">Armazenamento (SSD/HDD):</label>
-          <select id="storage" name="storage">
-            <option value="">Selecione um armazenamento</option>
-            <option value="Kingston A2000 500GB NVMe">Kingston A2000 500GB NVMe</option>
-            <option value="Samsung 980 1TB NVMe">Samsung 980 1TB NVMe</option>
-            <option value="Crucial MX500 1TB SATA">Crucial MX500 1TB SATA</option>
-            <option value="Western Digital Blue 1TB HDD">Western Digital Blue 1TB HDD</option>
-            <option value="Seagate Barracuda 2TB HDD">Seagate Barracuda 2TB HDD</option>
+          <label for="storage">Armazenamento:</label>
+          <select id="storage">
+            <option value="">Selecione</option>
+            <option value="1TB SSD NVMe">1TB SSD NVMe</option>
+            <option value="2TB HDD">2TB HDD</option>
           </select>
         </div>
-        
-        <!-- 6. Fonte de alimentação (PSU) -->
         <div class="form-group">
-          <label for="psu">Fonte de alimentação (PSU):</label>
-          <select id="psu" name="psu">
-            <option value="">Selecione uma fonte de alimentação</option>
-            <option value="Corsair CV550 550W 80 Plus Bronze">Corsair CV550 550W 80 Plus Bronze</option>
-            <option value="Cooler Master MWE 650W 80 Plus Bronze">Cooler Master MWE 650W 80 Plus Bronze</option>
-            <option value="EVGA 600 BR 80 Plus Bronze">EVGA 600 BR 80 Plus Bronze</option>
-            <option value="XPG Pylon 650W 80 Plus Bronze">XPG Pylon 650W 80 Plus Bronze</option>
-            <option value="Thermaltake Smart 500W 80 Plus">Thermaltake Smart 500W 80 Plus</option>
+          <label for="psu">Fonte de alimentação:</label>
+          <select id="psu">
+            <option value="">Selecione</option>
+            <option value="550W Bronze">550W Bronze</option>
+            <option value="650W Bronze">650W Bronze</option>
           </select>
         </div>
-        
-        <!-- 7. Gabinete -->
         <div class="form-group">
           <label for="case">Gabinete:</label>
-          <select id="case" name="case">
-            <option value="">Selecione um gabinete</option>
-            <option value="Cooler Master MasterBox Q300L">Cooler Master MasterBox Q300L</option>
+          <select id="case">
+            <option value="">Selecione</option>
             <option value="NZXT H510">NZXT H510</option>
-            <option value="Aerocool Bolt Mini">Aerocool Bolt Mini</option>
-            <option value="Corsair 4000D Airflow">Corsair 4000D Airflow</option>
-            <option value="Redragon GC-605">Redragon GC-605</option>
+            <option value="Cooler Master Q300L">Cooler Master Q300L</option>
           </select>
         </div>
-        
-        <!-- Botão para Verificar Compatibilidade -->
-        <div class="form-group">
-          <button type="button" onclick="checkCompatibility()">Verificar Compatibilidade</button>
-        </div>
+        <button type="button" onclick="checkCompatibility()">Verificar Compatibilidade</button>
       </form>
     </section>
   </main>
-  
-  <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 BuildZone. Todos os direitos reservados.</p>
   </footer>
-  
   <script>
     function checkCompatibility() {
-      // Coletando os valores selecionados
       const cpu = document.getElementById('cpu').value;
       const motherboard = document.getElementById('motherboard').value;
       const gpu = document.getElementById('gpu').value;
       const ram = document.getElementById('ram').value;
       const storage = document.getElementById('storage').value;
       const psu = document.getElementById('psu').value;
-      const pcCase = document.getElementById('case').value;
-      
-      // Exemplo placeholder: exibe os valores num alerta
-      alert(
-        "Componentes selecionados:\n" +
-        "CPU: " + (cpu || "Não selecionado") + "\n" +
-        "Placa-mãe: " + (motherboard || "Não selecionado") + "\n" +
-        "GPU: " + (gpu || "Não selecionado") + "\n" +
-        "RAM: " + (ram || "Não selecionado") + "\n" +
-        "Armazenamento: " + (storage || "Não selecionado") + "\n" +
-        "Fonte: " + (psu || "Não selecionado") + "\n" +
-        "Gabinete: " + (pcCase || "Não selecionado")
-      );
-    }
+      const pcCase = document.getElementById('case').value;const config = {
+    cpu, motherboard, gpu, ram, storage, psu, case: pcCase
+  };
+
+  fetch('https://buildzone-api.vercel.app/api/check', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(config)
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message || 'Compatibilidade verificada.');
+  })
+  .catch(err => {
+    alert('Erro ao verificar compatibilidade.');
+  });
+}
+
   </script>
 </body>
 </html>
