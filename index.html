@@ -3,160 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BuildZone | Blog</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <title>BuildZone | Home</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:400,700">
   <style>
-    /* Reset e variáveis do projeto */
+    /* Reset e variáveis globais */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    
     :root {
       --primary: #007BFF;
       --secondary: #6A0DAD;
-      --background: #1C1C1C;
-      --background2: #2E2E2E;
+      --background: #0C0C0C;
+      --background2: #1F1F1F;
       --text-color: #EAEAEA;
       --neon: #00FF00;
     }
+    
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       background: linear-gradient(135deg, var(--background), var(--background2));
       color: var(--text-color);
       line-height: 1.6;
       min-height: 100vh;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
     
-    /* Header */
+    /* Cabeçalho */
     header {
-      background: rgba(0, 0, 0, 0.7);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
+      background: rgba(0, 0, 0, 0.5);
       border-bottom: 2px solid var(--primary);
       box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
     }
+    
     header h1 {
-      font-size: 3.2rem;
+      font-size: 3.5rem;
       letter-spacing: 3px;
       color: var(--primary);
-      text-shadow: 2px 2px 8px var(--secondary);
+      text-shadow: 2px 2px 12px var(--secondary);
       margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.3rem;
-      text-shadow: 1px 1px 4px var(--secondary);
+      animation: neonPulse 1.5s infinite alternate;
     }
     
-    /* Navigation */
+    header p {
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 6px var(--secondary);
+    }
+    
+    /* Navegação */
     nav {
       background: rgba(0, 0, 0, 0.8);
       padding: 1rem;
       text-align: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
+    
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
       gap: 2rem;
     }
+    
     nav ul li a {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       transition: color 0.3s, text-shadow 0.3s;
     }
+    
     nav ul li a:hover {
       color: var(--primary);
-      text-shadow: 0 0 10px var(--primary);
+      text-shadow: 0 0 12px var(--primary);
     }
     
-    /* Container principal com duas colunas */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
+    /* Conteúdo Principal */
+    main {
+      padding: 3rem;
       max-width: 1200px;
-      margin: 2rem auto;
-      gap: 2rem;
-      padding: 0 1rem;
-    }
-    .blog-main {
-      flex: 3;
-    }
-    .sidebar {
-      flex: 1;
+      margin: auto;
+      text-align: center;
     }
     
-    /* Estilização dos cards de post */
-    .post {
-      background: rgba(0, 0, 0, 0.7);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      border-left: 5px solid var(--primary);
-      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .intro {
+      padding: 3rem 0;
+      animation: fadeIn 1.5s ease-in-out;
     }
-    .post:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 15px var(--primary);
-    }
-    .post h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    
+    .intro h2 {
+      font-size: 3rem;
       color: var(--primary);
-    }
-    .post p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-    .post a.read-more {
-      display: inline-block;
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      color: #fff;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6);
-    }
-    .post a.read-more:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px var(--primary);
+      text-shadow: 0 0 15px var(--secondary);
     }
     
-    /* Sidebar e Widgets */
-    .widget {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1.5rem;
+    .intro p {
+      font-size: 1.4rem;
       margin-bottom: 2rem;
-      border: 2px dashed var(--neon);
-      box-shadow: 0 0 15px var(--neon);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .widget h3 {
+    
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .buttons a {
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: #fff;
+      font-size: 1.3rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.6);
+    }
+    
+    .buttons a:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px var(--primary);
+    }
+    
+    /* Seção 'Você Sabia?' */
+    .did-you-know {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 3rem;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.8);
+    }
+    
+    .did-you-know h3 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
       color: var(--neon);
-    }
-    .widget p {
-      font-size: 1rem;
-    }
-    /* Seção "Você sabia?" */
-    .did-you-know {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.8);
-    }
-    .did-you-know h4 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px var(--neon);
     }
     
-    /* Footer */
+    .did-you-know p {
+      font-size: 1.2rem;
+    }
+    
+    /* Rodapé */
     footer {
       background: rgba(0, 0, 0, 0.7);
       text-align: center;
@@ -164,27 +156,32 @@
       border-top: 2px solid var(--primary);
       margin-top: 2rem;
     }
+    
     footer p {
       font-size: 1rem;
     }
     
-    /* Efeitos neon e animações */
-    @keyframes neonBlink {
-      0% { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
-      100% { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    .neon-text {
-      animation: neonBlink 1.5s infinite alternate;
+    
+    @keyframes neonPulse {
+      from { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); }
+      to { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
     }
     
     /* Responsividade */
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
       header h1 {
+        font-size: 2.8rem;
+      }
+      
+      .intro h2 {
         font-size: 2.5rem;
       }
+      
       nav ul {
         flex-direction: column;
       }
@@ -192,13 +189,13 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Cabeçalho -->
   <header>
-    <h1 class="neon-text">BuildZone</h1>
-    <p>Sua Zona de Inovação para Montagem e Análise de PCs</p>
+    <h1>BuildZone</h1>
+    <p>Bem-vindo à Zona de Inovação para PCs</p>
   </header>
   
-  <!-- Navigation -->
+  <!-- Navegação -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -208,66 +205,31 @@
     </ul>
   </nav>
   
-  <!-- Container principal -->
-  <div class="container">
-    <!-- Seção principal do blog (Posts) -->
-    <div class="blog-main">
-      <!-- Post 1 -->
-      <article class="post">
-        <h2>Inovações tecnológicas que transformam o mundo dos PCs</h2>
-        <p>
-          Descubra como as novas tendências em tecnologia estão revolucionando a forma como montamos e otimizamos nossos computadores. 
-          Processadores de última geração, sistemas inteligentes e interfaces futuristas já são realidade e prometem transformar sua experiência.
-        </p>
-        <a class="read-more" href="#">Leia Mais</a>
-      </article>
-      
-      <!-- Post 2 -->
-      <article class="post">
-        <h2>A evolução dos componentes: do analógico ao digital</h2>
-        <p>
-          Você sabia que as primeiras placas-mãe eram muito diferentes das atuais? A evolução dos componentes possibilitou a criação de máquinas mais compactas e poderosas, tornando o impossível em realidade.
-        </p>
-        <a class="read-more" href="#">Leia Mais</a>
-      </article>
-      
-      <!-- Post 3 -->
-      <article class="post">
-        <h2>Tendências Futuristas: O que vem por aí no mercado de PCs</h2>
-        <p>
-          Com a chegada de novas tecnologias, como inteligência artificial e computação quântica, o mercado de computadores está passando por uma revolução. 
-          Saiba como essas inovações podem impactar o desempenho e a eficiência dos sistemas.
-        </p>
-        <a class="read-more" href="#">Leia Mais</a>
-      </article>
-    </div>
+  <!-- Conteúdo Principal -->
+  <main>
+    <section class="intro">
+      <h2>Construindo o Futuro dos PCs</h2>
+      <p>
+        No BuildZone, você descobre as melhores combinações de hardware, verifica compatibilidade e explora tecnologias inovadoras.
+      </p>
+      <div class="buttons">
+        <a href="trabalho.html">PC para Trabalho</a>
+        <a href="gamer.html">PC Gamer</a>
+      </div>
+    </section>
     
-    <!-- Sidebar com Widgets -->
-    <aside class="sidebar">
-      <!-- Widget: Você Sabia? -->
-      <div class="widget">
-        <h3>Você sabia?</h3>
-        <div class="did-you-know">
-          <h4>O primeiro computador pesava mais de 30 toneladas!</h4>
-          <p>
-            Verdade! Os pioneiros da computação precisavam de espaços enormes para acomodar seus equipamentos, contrastando com os PCs compactos e potentes de hoje.
-          </p>
-        </div>
-      </div>
-      
-      <!-- Widget: Dica Tech -->
-      <div class="widget">
-        <h3>Dica Tech</h3>
-        <p>
-          Mantenha sempre seu sistema atualizado e faça uma manutenção regular. Atualizar drivers e limpar arquivos desnecessários garante um desempenho otimizado.
-        </p>
-      </div>
-    </aside>
-  </div>
+    <!-- Seção "Você Sabia?" -->
+    <section class="did-you-know">
+      <h3>Você sabia?</h3>
+      <p>
+        O primeiro SSD lançado tinha apenas 20MB de espaço! Hoje, temos SSDs ultrarrápidos com até 8TB de armazenamento.
+      </p>
+    </section>
+  </main>
   
-  <!-- Footer -->
+  <!-- Rodapé -->
   <footer>
-    <p>&copy; 2023 BuildZone. Todos os direitos reservados.</p>
+    <p>&copy; 2025 BuildZone. Todos os direitos reservados.</p>
   </footer>
   
   <script src="js/script.js"></script>
