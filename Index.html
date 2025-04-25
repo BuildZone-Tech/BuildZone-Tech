@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildZone | Home</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
+  <style>
+    /* Reset e variáveis do projeto */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #007BFF;
+      --secondary: #6A0DAD;
+      --background: #1C1C1C;
+      --background2: #2E2E2E;
+      --text-color: #EAEAEA;
+      --accent: #00FF00;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, var(--background), var(--background2));
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    /* Cabeçalho */
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-bottom: 2px solid var(--primary);
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      color: var(--primary);
+      text-shadow: 2px 2px 8px var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 4px var(--secondary);
+    }
+    
+    /* Navegação */
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 2rem;
+    }
+    
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    
+    nav ul li a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 10px var(--primary);
+    }
+    
+    /* Conteúdo Principal */
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .intro {
+      text-align: center;
+      padding: 3rem 0;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    .intro h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .intro p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .buttons a {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6);
+    }
+    
+    .buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--primary);
+    }
+    
+    /* Sessões de Conteúdo */
+    section.features {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem;
+    }
+    
+    section.features h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    section.features p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-top: 2px solid var(--primary);
+      margin-top: 2rem;
+    }
+    
+    footer p {
+      font-size: 1rem;
+    }
+    
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .dynamic-text {
+      display: inline-block;
+      animation: neonBlink 1.5s infinite alternate;
+    }
+    
+    @keyframes neonBlink {
+      from { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
+      to { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .intro h2 {
+        font-size: 2rem;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>BuildZone</h1>
+    <p>Sua Zona de Inovação para Montagem e Análise de PCs</p>
+  </header>
+  
+  <!-- Navegação -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="trabalho.html">PC para Trabalho</a></li>
+      <li><a href="gamer.html">PC Gamer</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Conteúdo Principal -->
+  <main>
+    <section class="intro">
+      <h2>Bem-vindo à <span class="dynamic-text">BuildZone</span></h2>
+      <p>
+        Descubra o universo da montagem de PCs com análises profundas, comparativos inteligentes e recomendações personalizadas.
+        Seja você um entusiasta da tecnologia ou um profissional em busca de performance, nossa plataforma dinâmica foi feita para transformar sua experiência no mundo dos computadores.
+      </p>
+      <div class="buttons">
+        <a href="trabalho.html">Explore PC para Trabalho</a>
+        <a href="gamer.html">Explore PC Gamer</a>
+      </div>
+    </section>
+    
+    <section class="features">
+      <h2>Recursos Exclusivos</h2>
+      <p>
+        No BuildZone, você encontra ferramentas interativas para verificar a compatibilidade, comparativos detalhados e simulações de desempenho real.
+      </p>
+      <p>
+        Análises de especialistas e dados precisos garantem que cada componente seja cuidadosamente avaliado para que você possa montar o PC ideal com confiança.
+      </p>
+    </section>
+    
+    <section class="features">
+      <h2>Por que escolher o BuildZone?</h2>
+      <p>
+        <strong>Inovação:</strong> Acompanhamos as últimas tendências e tecnologias.
+        <br>
+        <strong>Confiabilidade:</strong> Informações e análises que você pode confiar.
+        <br>
+        <strong>Experiência:</strong> Uma interface dinâmica, intuitiva e com design futurista para facilitar a montagem do seu PC.
+      </p>
+    </section>
+  </main>
+  
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2023 BuildZone. Todos os direitos reservados.</p>
+  </footer>
+  
+  <script>
+    // Atualiza automaticamente o ano no rodapé
+    (function() {
+      const footer = document.querySelector("footer p");
+      const currentYear = new Date().getFullYear();
+      footer.innerHTML = `&copy; ${currentYear} BuildZone. Todos os direitos reservados.`;
+    })();
+  </script>
+</body>
+</html>
